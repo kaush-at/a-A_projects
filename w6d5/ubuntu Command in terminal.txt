@@ -1,0 +1,202 @@
+check mysql is installed or not
+	mysql --version
+	
+	If it comes back with a response, it is installed, if it says "command not found" then it is not installed.
+
+-----------------------Install mysql workbench----------------------------------------
+Update repositories and upgrade if necessary:
+	sudo apt update && sudo apt upgrade
+
+Install MySQL Workbench using the APT package manager:
+	sudo apt install mysql-workbench
+
+Launch MySQL Workbench from the terminal:
+	mysql-workbench
+
+-----------------To kill ubuntu processes(Task manager on windows) G tool------------------
+	System–>Administrator–>System Monitor
+	-------------------------------------------------------------------
+
+----------------------Maven Eclipse plugin installation step by step:--------------------------------
+
+    1).Open Eclipse IDE
+    2).Click Help -> Install New Software...
+    3).Click Add button at top right corner
+
+    4).At pop up: fill up Name as "M2Eclipse" and Location as "http://download.eclipse.org/technology/m2e/releases" or http://download.eclipse.org/technology/m2e/milestones/1.0
+
+    5).Now click OK
+	------------------------------------------------------------------------------------------
+
+-------------------------------------to install maven using command line -------------------------------
+	sudo apt install maven
+	
+-------------------------------------configure tomcat in to eclipse ---------------------------
+ 1. File > New > Other...
+ 2. Select Server > Server.
+ 3. Click Next.  
+ 4. Select Tomcat vx.x Server
+ 5. Click Next. 
+ 6. Browse to the folder of your Tomcat installation. 
+    /media/kaushika/My Space/installed softwares/tomcat-server/apache-tomcat-7.0.81
+	
+     
+
+  Open the Servers view to see the server listed:
+
+    In the main menu select Window > Show View.
+    Choose Other... > Server > Servers.
+	
+Or you can directly can setup if there is server on show view  	
+
+-----------------change the ubuntu partition name--------------------
+
+Disk > right click on  additional partition option
+	edit file system
+	change the name
+----------------------------------------------------------------------
+
+mvn install:install-file -Dfile=/media/kaushika/My_Space/projects/Assetminder/Assetminder_source/fleetminder/Source/Server/fleetminder-telemetry/externalJars/transics-1.0.jar -DgroupId=com.fleetminder -DartifactId=transics -Dversion=1.0 -Dpackaging=jar
+
+
+/media/kaushika/My_Space/projects/Assetminder/Assetminder_source/fleetminder/Source/Server/fleetminder-telemetry/externalJars
+
+
+
+--------------------install notepadqq-----------------------------------
+
+	sudo add-apt-repository ppa:notepadqq-team/notepadqq
+	sudo apt-get update
+	sudo apt-get install notepadqq
+	
+
+--------------------install eclipse ------------------------------------
+
+	download eclipse
+	extract that gz file
+	go in to that folder and double click eclipse-inst file
+	now it will run the installer and auto install it to the /home/kaushika/eclipse/jee-oxygen/eclipse
+	go to that folder and double click on eclipse icon and it will open the eclipse
+	click lock to launcher
+	
+	*NOTE
+	when some times ? mark showing on launch pad instead of showing eclipse icon
+		this issue is in eclipse.desktop file
+	  To Resolve this issue---
+		Open terminal from Unity Dash, Application Launcher, or via Ctrl+Alt+T shortcut key.
+		When it opens, paste below command and run:
+
+			gedit .local/share/applications/eclipse.desktop
+			
+			change Icon = path as follow
+				Icon=/home/kaushika/eclipse/jee-oxygen/eclipse/icon.xpm
+			hit save
+		
+			
+-------------------install JDK JAVA------------------------------------
+
+	------Installing the Default JRE/JDK---------------
+		sudo apt-get update
+		sudo apt-get install default-jre
+	    sudo apt-get install default-jdk
+	
+	------Installing the Oracle JDK---------
+		sudo add-apt-repository ppa:webupd8team/java
+	    	sudo apt-get update
+	
+		Oracle JDK 8
+			sudo apt-get install oracle-java8-installer
+
+		Oracle JDK 9
+			sudo apt-get install oracle-java9-installer
+
+
+
+
+--------------------setup tomcat-----------------------------------------
+
+	place extracted tomcat folder in any place on your space
+	configure the eclipse according to tomact version that you have and give the path to bin folder
+	
+
+-------------------install mysql ------------------------------------------------
+
+	https://www.rosehosting.com/blog/how-to-install-mysql-on-ubuntu-16-04/
+	
+	Connect to your server and update system software
+		sudo apt-get update && sudo apt-get -y upgrade
+	
+	Install MySQL
+		sudo apt-get install mysql-server
+		
+		sudo mysql_secure_installation
+		
+------------- --run sql script using ubuntu terminal-----------------
+
+1). mysql -u <db user name> 
+	mysql -u root -p (hit enter)
+2). Enter password
+3). mysql> source <path to sql file>
+	ex/
+	mysql> source /media/kaushika/Data Space/prelive_dump_29_jan_2018.sql
+	
+	
+-----run external jar using ubuntu terminal for maven--------------
+open terminal and type this according to your jar
+
+mvn install:install-file -Dfile=/media/kaushika/Data Space/Auxenta_projects/fleetminder/fleetminder_source/fleetminder/Source/Server/fleetminder-telemetry/externalJars/transics-1.0.jar 
+-DgroupId=com.fleetminder -DartifactId=fleetminder-telemetry -Dversion=1.0 -Dpackaging=jar
+
+to run this command you have to install mvn in your machine
+
+if you havent install mvn you can install it using eclipse also
+
+	right click on any project (i have right click on web module)
+	runas -> maven build
+		it will open edit configuration window and put below command (without mvn part) in to goals field
+			install:install-file -Dfile=/media/kaushika/Data Space/Auxenta_projects/fleetminder/fleetminder_source/fleetminder/Source/Server/fleetminder-telemetry/externalJars/transics-1.0.jar 
+			-DgroupId=com.fleetminder -DartifactId=fleetminder-telemetry -Dversion=1.0 -Dpackaging=jar
+		click apply and run
+		after that update mvn project 
+
+	http://www.mkyong.com/maven/how-to-include-library-manully-into-maven-local-repository/
+	
+----------------change the launch pad position-------------------------------------
+
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+gsettings set com.canonical.Unity.Launcher launcher-position Left
+	
+	
+we can change it graphically---
+	
+	Unity Tweak Tool, a graphical configuration tool for Unity desktop, now has an option to move the Unity Launcher. Install it via Gnome Software, launch the tool and navigate to 
+		Unity -> Launcher:
+
+	
+
+--------------------To rename a partition:------------------------------
+
+    Go to System > Administration > Disk Utility > Hard Disk.
+    Select the partition of your choice in the Volume section
+    Click Edit Filesystem Label
+    Enter a name in the field and click on Apply to validate	
+	
+-----------------install sublime text -------------------
+
+1). First we add the repository for the package.
+	sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y\
+
+2. Then we update apt’s database to include the new packages from the repository.
+	sudo apt-get update
+	
+3. Then we install sublime:
+	sudo apt-get install sublime-text-installer	
+	
+Make sure to accept any dependencies apt asks you to install.
+
+subl
+
+Finally, we create a link to the sublime executable so that you can run the subl command from bash — the installer should do this, but it did not for me:
+	ln -s /opt/sublime_text/sublime_text /usr/local/bin/sublime_text	
+	
